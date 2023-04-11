@@ -3,10 +3,10 @@ import 'package:apptest/presentation/views/widgets/main_scaffold.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../app_routes.dart';
 import '../../generated/l10n.dart';
 import '../../images.dart';
-import '../blocs/bloc/result_bloc.dart';
+import '../blocs/navigator/navigator_bloc.dart';
+import '../blocs/result/result_bloc.dart';
 
 class ChoiceView extends StatefulWidget {
   const ChoiceView({super.key});
@@ -21,7 +21,7 @@ class _ChoiceViewState extends State<ChoiceView> {
     return BlocListener<ResultBloc, ResultState>(
       listener: (context, state) {
         if (state is GoalSavedState) {
-          Navigator.of(context).pushNamed(AppRoutes.DATE_OF_BIRTH_VIEW);
+          BlocProvider.of<NavigatorBloc>(context).add(const PushNamedEvent(GoalSavedState));
         }
       },
       child: MainScaffold(

@@ -45,6 +45,8 @@ dependencies:
   # For BLoC
   flutter_bloc: ^8.1.2
   equatable: ^2.0.5
+  # For DI
+  get_it: ^7.2.0
 
 dev_dependencies:
   flutter_test:

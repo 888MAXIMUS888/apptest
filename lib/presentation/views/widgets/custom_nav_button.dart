@@ -4,7 +4,7 @@ import 'package:flutter_svg/svg.dart';
 
 import '../../../colors.dart';
 import '../../../images.dart';
-import '../../blocs/bloc/result_bloc.dart';
+import '../../blocs/result/result_bloc.dart';
 
 class CustomNavButton extends StatelessWidget {
   final String title;

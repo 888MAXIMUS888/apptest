@@ -8,7 +8,8 @@ import 'package:flutter_svg/svg.dart';
 import '../../colors.dart';
 import '../../generated/l10n.dart';
 import '../../images.dart';
-import '../blocs/bloc/result_bloc.dart';
+import '../blocs/navigator/navigator_bloc.dart';
+import '../blocs/result/result_bloc.dart';
 
 class DateOfBirthView extends StatefulWidget {
   const DateOfBirthView({super.key});
@@ -26,7 +27,7 @@ class _DateOfBirthViewState extends State<DateOfBirthView> {
     return BlocListener<ResultBloc, ResultState>(
       listener: (context, state) {
         if (state is DateSavedState) {
-          Navigator.of(context).pushNamed(AppRoutes.RESULT_VIEW);
+          BlocProvider.of<NavigatorBloc>(context).add(const PushNamedEvent(DateSavedState));
         }
       },
       child: MainScaffold(

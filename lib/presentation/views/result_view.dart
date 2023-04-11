@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../generated/l10n.dart';
-import '../blocs/bloc/result_bloc.dart';
+import '../blocs/result/result_bloc.dart';
 
 class ResultView extends StatefulWidget {
   const ResultView({super.key});
